@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023220142) do
+ActiveRecord::Schema.define(version: 20131023221300) do
 
   create_table "cartoons", force: true do |t|
     t.string   "title"
@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(version: 20131023220142) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cartoon_id"
+  end
+
+  create_table "characters_episodes", force: true do |t|
+    t.integer "character_id"
+    t.integer "episode_id"
   end
 
   create_table "episodes", force: true do |t|
