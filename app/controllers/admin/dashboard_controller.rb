@@ -3,5 +3,10 @@ class Admin::DashboardController < ApplicationController
 
 
   def index
+
+  end
+
+  def statistic
+
   end
 end

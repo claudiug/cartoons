@@ -24,6 +24,8 @@ gem 'meta-tags', :require => 'meta_tags'
 gem 'bootstrap-sass-rails'
 gem 'will_paginate'
 gem 'quiet_assets'
+gem "ckeditor"
+gem 'thin'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
