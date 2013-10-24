@@ -1,2 +1,21 @@
-<h1>Admin::Songs#show</h1>
-<p>Find me in app/views/admin/songs/show.html.erb</p>
+<div class="row">
+  <div class="page-header">
+    <h1><%= @song.title %> <small><%= @song.created_at %></small></h1>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">Panel heading without title</div>
+    <div class="panel-body">
+      Panel content
+    </div>
+  </div>
+
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title">Panel title</h3>
+    </div>
+    <div class="panel-body">
+      Panel content
+    </div>
+  </div>
+</div>

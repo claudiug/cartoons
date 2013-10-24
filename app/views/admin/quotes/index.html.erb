@@ -1,0 +1,33 @@
+<div class="row">
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th> Content</th>
+
+      <th> Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @quotes.each do |quote| %>
+
+        <tr>
+          <td><%= quote.id %></td>
+          <td><%= quote.content %></td>
+
+          <td>
+            <%= link_to "Edit", edit_admin_quote_path(quote), class: 'btn btn-primary' %>
+            <%= link_to "Show", admin_quote_path(quote), class: 'btn btn-info' %>
+            <%= link_to "Delete", admin_quote_path(quote),
+                        method: :delete,
+                        data: {confirm: "are you sure you want to destroy?"},
+                        class: 'btn btn-danger'
+            %>
+          </td>
+        </tr>
+
+
+    <% end %>
+    </tbody>
+  </table>
+</div>
