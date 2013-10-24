@@ -1,0 +1,47 @@
+<div class="row">
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th> Name</th>
+      <th> Description</th>
+      <th> Role</th>
+      <th> First Appearance</th>
+      <th> Occupation</th>
+      <th> Spouse </th>
+      <th> Religion</th>
+      <th> Children</th>
+
+      <th> Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @characters.each do |character| %>
+
+        <tr>
+          <td><%= character.id %></td>
+          <td><%= character.name %></td>
+          <td><%= character.description %></td>
+          <td><%= character.role %></td>
+          <td><%= character.first_appearance %></td>
+          <td><%= character.occupation %></td>
+          <td><%= character.spouse %></td>
+          <td><%= character.religion %></td>
+          <td><%= character.children %></td>
+
+          <td>
+            <%= link_to "Edit", edit_admin_character_path(character), class: 'btn btn-primary' %>
+            <%= link_to "Show", admin_cartoon_path(character), class: 'btn btn-info' %>
+            <%= link_to "Delete", admin_cartoon_path(character),
+                        method: :delete,
+                        data: {confirm: "are you sure you want to destroy?"},
+                        class: 'btn btn-danger'
+            %>
+          </td>
+        </tr>
+
+
+    <% end %>
+    </tbody>
+  </table>
+</div>

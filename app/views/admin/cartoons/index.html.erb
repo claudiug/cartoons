@@ -1,0 +1,48 @@
+<div class="row">
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th> <%= sortable "title" %></th>
+      <th> <%= sortable "genre" %></th>
+      <th> <%= sortable "description" %></th>
+      <th> <%= sortable "created_by" %></th>
+      <th> <%= sortable "language" %></th>
+      <th> <%= sortable "country" %></th>
+      <th> <%= sortable "no_of_seasons" %></th>
+      <th> <%= sortable "no_of_episodes" %></th>
+      <th> <%= sortable "is_active" %></th>
+      <th> Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @cartoons.each do |cartoon| %>
+
+        <tr>
+          <td><%= cartoon.id %></td>
+          <td><%= cartoon.title %></td>
+          <td><%= cartoon.genre %></td>
+          <td><%= cartoon.description %></td>
+          <td><%= cartoon.language %></td>
+          <td><%= cartoon.country_of_origin %></td>
+          <td><%= cartoon.no_of_seasons %></td>
+          <td><%= cartoon.no_of_episodes %></td>
+          <td><%= cartoon.no_of_episodes %></td>
+          <td><%= cartoon.is_active ? "Yes" : "No" %></td>
+
+          <td>
+            <%= link_to "Edit", edit_admin_cartoon_path(cartoon), class: 'btn btn-primary' %>
+            <%= link_to "Show", admin_cartoon_path(cartoon), class: 'btn btn-info' %>
+            <%= link_to "Delete", admin_cartoon_path(cartoon),
+                        method: :delete,
+                        data: {confirm: "are you sure you want to destroy?"},
+                        class: 'btn btn-danger'
+            %>
+          </td>
+         </tr>
+
+
+    <% end %>
+    </tbody>
+  </table>
+</div>

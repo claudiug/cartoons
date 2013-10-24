@@ -1,0 +1,46 @@
+<div class="row">
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th> Name</th>
+      <th> Episode Nr</th>
+      <th> Season NR</th>
+      <th> Guest Actors</th>
+      <th> Plot</th>
+      <th> Background </th>
+      <th> Review</th>
+      <th> Nr Of Episodes</th>
+
+      <th> Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @episodes.each do |episode| %>
+
+        <tr>
+          <td><%= episode.id %></td>
+          <td><%= episode.name %></td>
+          <td><%= episode.episode_number %></td>
+          <td><%= episode.season_number %></td>
+          <td><%= episode.guest_actors %></td>
+          <td><%= episode.plot %></td>
+          <td><%= episode.background %></td>
+          <td><%= episode.review %></td>
+
+          <td>
+            <%= link_to "Edit", edit_admin_episode_path(episode), class: 'btn btn-primary' %>
+            <%= link_to "Show", admin_episode_path(episode), class: 'btn btn-info' %>
+            <%= link_to "Delete", admin_episode_path(episode),
+                        method: :delete,
+                        data: {confirm: "are you sure you want to destroy?"},
+                        class: 'btn btn-danger'
+            %>
+          </td>
+        </tr>
+
+
+    <% end %>
+    </tbody>
+  </table>
+</div>
