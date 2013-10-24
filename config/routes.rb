@@ -1,4 +1,6 @@
 Cartoons::Application.routes.draw do
+  resources :comments
+
   root "default#index"
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
