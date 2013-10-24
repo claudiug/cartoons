@@ -28,7 +28,7 @@ class Admin::EpisodesController < ApplicationController
   end
 
   def update
-    if @episode.update(cartoon_params)
+    if @episode.update(episode_params)
       redirect_to [:admin, @episode], notice: "episode was updated!"
     else
       render :edit

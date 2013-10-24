@@ -27,6 +27,20 @@
           <li><%= link_to "Add a new Episode",new_admin_episode_path %></li>
         </ul>
       </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Songs <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "List all Songs", admin_songs_path %></li>
+          <li><%= link_to "Add a new Song",new_admin_song_path %></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quotes <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "List all Quotes", admin_quotes_path %></li>
+          <li><%= link_to "Add a new Quote",new_admin_quote_path %></li>
+        </ul>
+      </li>
 
 
     </ul>
