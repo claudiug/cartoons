@@ -1,0 +1,29 @@
+<div class="row">
+  <%= form_tag login_path, html: {class: "form-horizontal"}, method: :post  do %>
+
+      <div class="form-group">
+        <%= label_tag :email %>
+        <div class="col-lg-4">
+          <%= text_field_tag  :email, params[:email]%>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= label_tag :password%>
+        <div class="col-lg-4">
+          <%= password_field_tag :password%>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= label_tag :password_confirmation %>
+        <div class="col-lg-4">
+          <%= password_field_tag :password_confirmation, %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-lg-offset-1 col-lg-4">
+          <%= submit_tag %>
+        </div>
+      </div>
+  <% end%>
+</div>
