@@ -28,8 +28,44 @@
   </div>
 </div>
 <div class="row">
-  <div class="panel panel-primary">
-    <p>some panel</p>
-
+  <div class="col-md-8">
+    stuff
   </div>
+  <div class="col-md-4">
+  <div class="panel panel-danger">
+    <div class="panel panel-primary">
+
+    <ul class="list-group">
+      <li class="list-group-item">
+        <%= link_to "All Cartoons", admin_cartoons_path, class: "btn btn-info" %>
+        <span class="label label-primary">Total cartoons</span>
+        <span class="badge"><%= @statistic.total_cartoons %></span>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "All Characters", admin_characters_path, class: "btn btn-info" %>
+        <span class="label label-primary">Total characters</span>
+        <span class="badge"><%= @statistic.total_characters %></span>
+      </li>
+
+      <li class="list-group-item">
+        <%= link_to "All Songs", admin_songs_path, class: "btn btn-info" %>
+        <span class="label label-primary">Total songs</span>
+        <span class="badge"><%= @statistic.total_songs %></span>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "All Quotes", admin_quotes_path, class: "btn btn-info" %>
+        <span class="label label-primary">Total quotes</span>
+        <span class="badge"><%= @statistic.total_quotes %></span>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "All Episodes", admin_episodes_path, class: "btn btn-info" %>
+        <span class="label label-primary">Total episodes</span>
+        <span class="badge"><%= @statistic.total_episodes %></span>
+      </li>
+    </ul>
+
+    </div>
+  </div>
+
 </div>
+ </div>

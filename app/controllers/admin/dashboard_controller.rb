@@ -3,7 +3,7 @@ class Admin::DashboardController < ApplicationController
 
 
   def index
-
+   @statistic = Statistic.new
   end
 
   def statistic

@@ -1,0 +1,2 @@
+class CartoonsController < ApplicationController
+end
