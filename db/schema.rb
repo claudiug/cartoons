@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023221300) do
+ActiveRecord::Schema.define(version: 20131024112645) do
 
   create_table "cartoons", force: true do |t|
     t.string   "title"
@@ -57,6 +57,21 @@ ActiveRecord::Schema.define(version: 20131023221300) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cartoon_id"
+  end
+
+  create_table "quotes", force: true do |t|
+    t.text     "content"
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "songs", force: true do |t|
+    t.string   "title"
+    t.string   "link"
+    t.integer  "episode_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
