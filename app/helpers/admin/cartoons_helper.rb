@@ -1,4 +1,5 @@
 module Admin::CartoonsHelper
+
   def sortable(column, title= nil)
     title ||= column.titleize
     direction = column == sort_column && sort_direction == 'asc' ? 'desc' : "asc"
