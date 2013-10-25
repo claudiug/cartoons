@@ -31,8 +31,8 @@
 
           <td>
             <%= link_to "Edit", edit_admin_character_path(character), class: 'btn btn-primary' %>
-            <%= link_to "Show", admin_cartoon_path(character), class: 'btn btn-info' %>
-            <%= link_to "Delete", admin_cartoon_path(character),
+            <%= link_to "Show", admin_character_path(character), class: 'btn btn-info' %>
+            <%= link_to "Delete", admin_character_path(character),
                         method: :delete,
                         data: {confirm: "are you sure you want to destroy?"},
                         class: 'btn btn-danger'

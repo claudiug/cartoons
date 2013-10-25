@@ -5,21 +5,21 @@ Cartoons::Application.routes.draw do
   post "login", to: "sessions#create"
   get "logout", to: "sessions#destroy"
 
-  resources :cartoons do
-    resources :episodes
-    resources :characters
-    resources :comments
+  resources :cartoons, only: [:index, :show] do
+    resources :episodes, only: [:index, :show]
+    resources :characters, only: [:index, :show]
+    resources :comments, only: [:index, :show]
   end
 
 
-  resources :characters do
-    resources :comments
-    resources :quotes
+  resources :characters, only: [:index, :show] do
+    resources :comments, only: [:index, :show]
+    resources :quote, only: [:index, :show]
   end
   resources :episodes do
-    resources :songs
-    resources :comments
-    resources :quotes
+    resources :songs, only: [:index, :show]
+    resources :comments, only: [:index, :show]
+    resources :quotes, only: [:index, :show]
   end
 
 
