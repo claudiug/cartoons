@@ -6,6 +6,14 @@ class Episode < ActiveRecord::Base
   validates :slug, uniqueness: true, presence: true
   before_validation :generate_slug
   before_validation :make_name_titlecase
+
+  def cartoon_title
+    cartoon.try(:title)
+  end
+
+  def cartoon_title=(title)
+    self.cartoon = Cartoon.find_by(title: title) if title.present?
+  end
   def to_param
     slug
   end

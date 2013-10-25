@@ -3,14 +3,14 @@
     <thead>
     <tr>
       <th>#</th>
-      <th> Name</th>
-      <th> Episode Nr</th>
-      <th> Season NR</th>
-      <th> Guest Actors</th>
-      <th> Plot</th>
-      <th> Background </th>
-      <th> Review</th>
-      <th> Nr Of Episodes</th>
+      <th><%= sortable "name" %> </th>
+      <th> <%= sortable "episode " %></th>
+      <th><%= sortable "season" %> </th>
+      <th><%= sortable "guest actor" %> </th>
+      <th><%= sortable "plot" %>t</th>
+      <th><%= sortable "background" %></th>
+      <th><%= sortable "review" %></th>
+      <th><%= sortable "number of episodes" %></th>
 
       <th> Options</th>
     </tr>
@@ -26,7 +26,7 @@
           <td><%= episode.guest_actors %></td>
           <td><%= episode.plot %></td>
           <td><%= episode.background %></td>
-          <td><%= episode.review %></td>
+          <td><%= episode.review.html_safe %></td>
 
           <td>
             <%= link_to "Edit", edit_admin_episode_path(episode), class: 'btn btn-primary' %>
@@ -39,8 +39,18 @@
           </td>
         </tr>
 
-
     <% end %>
     </tbody>
   </table>
+</div>
+
+<div class="row">
+  <div class="hpFooterBlock">
+    <div class="apple_pagination">
+      <div class="page_info">
+        <%= page_entries_info @episodes %>
+      </div>
+      <%= will_paginate @episodes, :container => false%>
+    </div>
+  </div>
 </div>

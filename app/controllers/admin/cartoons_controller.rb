@@ -5,9 +5,12 @@ class Admin::CartoonsController < ApplicationController
   helper_method :sort_direction, :sort_column
 
 
+  #noinspection RailsChecklist01
   def index
     @cartoons = Cartoon.order(sort_column + ' ' + sort_direction).
         paginate(page: params[:page], per_page: 5)
+
+
   end
 
   def new
@@ -46,6 +49,11 @@ class Admin::CartoonsController < ApplicationController
     flash[:notice] = "cartoon destroy"
   end
 
+  def cartoon_terms
+    @eps = Cartoon.order(:title).where("title like ?", "#{params[:q]}%")
+    render json: @eps.map(&:title), root: false
+  end
+
 
 
   private
@@ -79,6 +87,8 @@ class Admin::CartoonsController < ApplicationController
       "asc"
     end
   end
+
+
 
 
 

@@ -3,8 +3,8 @@
     <thead>
     <tr>
       <th>#</th>
-      <th>Title</th>
-      <th>Link</th>
+      <th><%= sortable("title") %></th>
+      <th><%= sortable("link") %></th>
       <th>Options</th>
     </tr>
     </thead>
@@ -31,4 +31,15 @@
     <% end %>
     </tbody>
   </table>
+</div>
+
+<div class="row">
+  <div class="hpFooterBlock">
+    <div class="apple_pagination">
+      <div class="page_info">
+        <%= page_entries_info @songs %>
+      </div>
+      <%= will_paginate @songs, :container => false%>
+    </div>
+  </div>
 </div>

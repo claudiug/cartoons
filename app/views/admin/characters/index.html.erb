@@ -3,14 +3,14 @@
     <thead>
     <tr>
       <th>#</th>
-      <th> Name</th>
-      <th> Description</th>
-      <th> Role</th>
-      <th> First Appearance</th>
-      <th> Occupation</th>
-      <th> Spouse </th>
-      <th> Religion</th>
-      <th> Children</th>
+      <th> <%= sortable "name" %></th>
+      <th> <%= sortable "description" %></th>
+      <th> <%= sortable "role" %></th>
+      <th> <%= sortable "first appesrance" %> </th>
+      <th> <%= sortable "occupation" %></th>
+      <th> <%= sortable "spose" %> </th>
+      <th> <%= sortable "religion" %></th>
+      <th> <%= sortable "children" %></th>
 
       <th> Options</th>
     </tr>
@@ -44,4 +44,15 @@
     <% end %>
     </tbody>
   </table>
+</div>
+
+<div class="row">
+  <div class="hpFooterBlock">
+    <div class="apple_pagination">
+      <div class="page_info">
+        <%= page_entries_info @characters %>
+      </div>
+      <%= will_paginate @characters, :container => false%>
+    </div>
+  </div>
 </div>

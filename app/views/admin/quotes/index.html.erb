@@ -3,7 +3,7 @@
     <thead>
     <tr>
       <th>#</th>
-      <th> Content</th>
+      <th><%= sortable("content") %></th>
 
       <th> Options</th>
     </tr>
@@ -30,4 +30,15 @@
     <% end %>
     </tbody>
   </table>
+</div>
+
+<div class="row">
+  <div class="hpFooterBlock">
+    <div class="apple_pagination">
+      <div class="page_info">
+        <%= page_entries_info @quotes %>
+      </div>
+      <%= will_paginate @quotes, :container => false%>
+    </div>
+  </div>
 </div>
