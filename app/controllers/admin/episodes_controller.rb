@@ -47,7 +47,7 @@ class Admin::EpisodesController < ApplicationController
   private
 
   def set_episode
-    @episode = Episode.find(params[:id])
+    @episode = Episode.find_by(slug: params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = "Episode not found"
     redirect_to admin_episodes_path

@@ -47,7 +47,7 @@ class Admin::CharactersController < ApplicationController
   private
 
   def set_character
-    @character = Character.find(params[:id])
+    @character = Character.find_by(slug: params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = "Character not found"
     redirect_to admin_characters_path

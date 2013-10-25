@@ -47,7 +47,7 @@ class Admin::SongsController < ApplicationController
   private
 
   def set_song
-    @episode = Song.find(params[:id])
+    @episode = Song.find_by(slug: params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = "Episode not found"
     redirect_to admin_songs_path

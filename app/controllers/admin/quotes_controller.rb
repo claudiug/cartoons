@@ -47,7 +47,7 @@ class Admin::QuotesController < ApplicationController
   private
 
   def set_quotes
-    @quote = Quote.find(params[:id])
+    @quote = Quote.find_by(slug: params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = "Quote not found"
     redirect_to admin_quotes_path

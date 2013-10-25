@@ -1,0 +1,5 @@
+<% @cartoons.each do |c| %>
+    <p>
+      <%= link_to c.title, cartoon_path(c) %>
+    </p>
+<% end %>

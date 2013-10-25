@@ -51,7 +51,7 @@ class Admin::CartoonsController < ApplicationController
   private
 
   def set_cartoon
-    @cartoon = Cartoon.find(params[:id])
+    @cartoon = Cartoon.find_by(slug: params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = "Cartoon not found"
     redirect_to admin_cartoons_path

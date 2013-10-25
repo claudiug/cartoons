@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024224536) do
+ActiveRecord::Schema.define(version: 20131024234511) do
 
   create_table "accounts", force: true do |t|
     t.string   "username"
@@ -33,7 +33,10 @@ ActiveRecord::Schema.define(version: 20131024224536) do
     t.boolean  "is_active"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "cartoons", ["slug"], name: "index_cartoons_on_slug"
 
   create_table "characters", force: true do |t|
     t.string   "name"
@@ -47,7 +50,10 @@ ActiveRecord::Schema.define(version: 20131024224536) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cartoon_id"
+    t.string   "slug"
   end
+
+  add_index "characters", ["slug"], name: "index_characters_on_slug"
 
   create_table "characters_episodes", force: true do |t|
     t.integer "character_id"
@@ -73,14 +79,20 @@ ActiveRecord::Schema.define(version: 20131024224536) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cartoon_id"
+    t.string   "slug"
   end
+
+  add_index "episodes", ["slug"], name: "index_episodes_on_slug"
 
   create_table "quotes", force: true do |t|
     t.text     "content"
     t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "quotes", ["slug"], name: "index_quotes_on_slug"
 
   create_table "songs", force: true do |t|
     t.string   "title"
@@ -88,6 +100,9 @@ ActiveRecord::Schema.define(version: 20131024224536) do
     t.integer  "episode_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "songs", ["slug"], name: "index_songs_on_slug"
 
 end
