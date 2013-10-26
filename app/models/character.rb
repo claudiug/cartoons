@@ -17,4 +17,15 @@ class Character < ActiveRecord::Base
   def make_name_titlecase
     self.name = name.titlecase
   end
+
+  def cartoon_title
+    cartoon.try(:title)
+  end
+
+  def cartoon_tile=(title)
+    self.cartoon = Cartoon.find_by(title: title) if title.present?
+  end
+
+
+
 end

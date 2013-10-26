@@ -27,7 +27,9 @@ gem 'quiet_assets'
 gem "ckeditor"
 gem 'thin'
 gem "jquery-ui-rails"
-gem 'twitter-typeahead-rails'
+gem 'chosen-rails'
+gem 'compass-rails', github: 'Compass/compass-rails'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

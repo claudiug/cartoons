@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024234511) do
+ActiveRecord::Schema.define(version: 20131026095150) do
 
   create_table "accounts", force: true do |t|
     t.string   "username"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20131024234511) do
     t.datetime "updated_at"
     t.integer  "cartoon_id"
     t.string   "slug"
+    t.boolean  "draft"
   end
 
   add_index "episodes", ["slug"], name: "index_episodes_on_slug"

@@ -15,5 +15,5 @@
 //= require jquery.ui.all
 //= require twitter/bootstrap
 //= require ckeditor/init
-//= require twitter/typeahead
+//= require chosen-jquery
 //= require_tree .

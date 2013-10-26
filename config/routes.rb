@@ -34,7 +34,11 @@ Cartoons::Application.routes.draw do
         get :cartoon_terms
       end
     end
-    resources :characters
+    resources :characters do
+      collection do
+        get :characters_terms
+      end
+    end
     resources :episodes
     resources :songs
     resources :quotes

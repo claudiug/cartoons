@@ -5,7 +5,6 @@ class Admin::CartoonsController < ApplicationController
   helper_method :sort_direction, :sort_column
 
 
-  #noinspection RailsChecklist01
   def index
     @cartoons = Cartoon.order(sort_column + ' ' + sort_direction).
         paginate(page: params[:page], per_page: 5)
@@ -67,7 +66,7 @@ class Admin::CartoonsController < ApplicationController
 
   def cartoon_params
     params.require(:cartoon).permit(:title, :genre, :description, :created_by, :language, :country_of_origin,
-                                    :no_of_episodes, :is_active, )
+                                    :no_of_episodes, :is_active, :cartoon_title)
   end
 
   def sort_column

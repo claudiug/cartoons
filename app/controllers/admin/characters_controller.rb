@@ -45,6 +45,10 @@ class Admin::CharactersController < ApplicationController
     flash[:notice] = "character destroy"
   end
 
+  def characters_terms
+    @eps = Character.order(:name).where("name like ?", "#{params[:q]}%")
+    render json: @eps.map(&:name), root: false
+  end
 
 
   private
@@ -58,7 +62,7 @@ class Admin::CharactersController < ApplicationController
 
   def character_params
     params.require(:character).permit(:name, :description, :role, :first_appearance, :occupation, :spouse,
-                                      :religion, :children, :cartoon_id)
+                                      :religion, :children, :cartoon_id, :cartoon_title)
   end
 
   def sort_column
