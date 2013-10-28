@@ -14,4 +14,12 @@ class Song < ActiveRecord::Base
   def make_title_titlecase
     self.title=title.titlecase
   end
+
+  def episode_name
+    episode.try(:name)
+  end
+
+  def episode_name=(name)
+    self.episode= Episode.find_by(name: name) if name.present?
+  end
 end

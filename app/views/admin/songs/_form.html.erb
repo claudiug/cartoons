@@ -24,6 +24,13 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :episode_name, class: 'col-lg-1 control-label' %>
+        <div class="col-lg-2">
+          <%= f.collection_select :episode_name, Episode.order(:name), :id, :name, {}, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
         <div class="col-lg-offset-1 col-lg-10">
           <%= f.submit( class: 'btn btn-primary') %>
         </div>

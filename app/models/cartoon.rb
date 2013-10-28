@@ -4,6 +4,7 @@ class Cartoon < ActiveRecord::Base
   validates :slug, uniqueness: true, presence: true
   before_validation :generate_slug
   before_validation :make_title_titlecase
+
   def to_param
     slug
   end
@@ -15,4 +16,11 @@ class Cartoon < ActiveRecord::Base
   def make_title_titlecase
     self.title = title.titlecase
   end
+
+  def no_of_episodes
+    episodes.count
+  end
+
+
+
 end

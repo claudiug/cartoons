@@ -22,7 +22,7 @@ class Character < ActiveRecord::Base
     cartoon.try(:title)
   end
 
-  def cartoon_tile=(title)
+  def cartoon_title=(title)
     self.cartoon = Cartoon.find_by(title: title) if title.present?
   end
 

@@ -7,4 +7,8 @@ class CharactersController < ApplicationController
   def show
     @character = Character.find_by!(slug: params[:id])
   end
+
+  private
+
+
 end

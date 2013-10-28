@@ -15,4 +15,12 @@ class Quote < ActiveRecord::Base
   def make_content_titlecase
     self.content = content.titlecase
   end
+
+  def character_name
+    character.try(:name)
+  end
+
+  def character_name=(name)
+    self.character = Character.find_by(name: name) if name.present?
+  end
 end

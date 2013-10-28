@@ -50,14 +50,14 @@ class Admin::SongsController < ApplicationController
   private
 
   def set_song
-    @episode = Song.find_by(slug: params[:id])
+    @song = Song.find_by(slug: params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = "Episode not found"
     redirect_to admin_songs_path
   end
 
   def songs_params
-    params.require(:song).permit(:title, :link, :episode_id)
+    params.require(:song).permit(:title, :link, :episode_id, :episode_name)
   end
 
   def sort_column

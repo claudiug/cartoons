@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131026095150) do
+ActiveRecord::Schema.define(version: 20131028140245) do
 
   create_table "accounts", force: true do |t|
     t.string   "username"
@@ -94,6 +94,13 @@ ActiveRecord::Schema.define(version: 20131026095150) do
   end
 
   add_index "quotes", ["slug"], name: "index_quotes_on_slug"
+
+  create_table "seasons", force: true do |t|
+    t.string   "name"
+    t.integer  "cartoon_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "songs", force: true do |t|
     t.string   "title"
