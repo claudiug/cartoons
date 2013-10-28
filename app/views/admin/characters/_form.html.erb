@@ -12,7 +12,7 @@
       <% end %>
       <div class="form-group">
         <%= f.label :name, class: 'col-lg-1 control-label' %>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <%= f.text_field :name, class: 'form-control' %>
         </div>
       </div>
@@ -21,57 +21,57 @@
 
       <div class="form-group">
         <%= f.label :cartoon_id, class: 'col-lg-1 control-label' %>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <%= f.collection_select :cartoon_id, Cartoon.order(:title), :id, :title, {},  class:'form-control' %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :description, class: 'col-lg-1 control-label' %>
-        <div class="col-lg-8">
+        <div class="col-lg-6">
           <%= f.cktext_area  :description,  class: 'form-control',cols:"40", rows:"10", :ckeditor => {:language => "en"} %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :role, class: 'col-lg-1 control-label' %>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <%= f.text_field :role, class: 'form-control' %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :first_appearance, class: 'col-lg-1 control-label' %>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <%= f.text_field :first_appearance, class: 'form-control' %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :occupation, class: 'col-lg-1 control-label' %>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <%= f.text_field :occupation, class: 'form-control' %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :spouse, class: 'col-lg-1 control-label' %>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <%= f.text_field :spouse, class: 'form-control' %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :religion, class: 'col-lg-1 control-label' %>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <%= f.text_field :religion, class: 'form-control' %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :children, class: 'col-lg-1 control-label' %>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <%= f.text_field :role, class: 'form-control' %>
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-lg-offset-1 col-lg-10">
-          <%= f.submit( class: 'btn btn-primary') %>
+        <div class="col-lg-offset-1 col-lg-6">
+          <%= f.submit class: 'btn btn-primary btn-block' %>
         </div>
       </div>
   <% end%>
