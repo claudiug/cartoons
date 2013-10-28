@@ -1,1 +1,5 @@
-<%= @cartoon.title %>
+<% @characters.each do |c| %>
+    <%= link_to c.name, [@cartoon, c] %>
+<% end %>
+
+

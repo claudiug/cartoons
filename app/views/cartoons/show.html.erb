@@ -1,1 +1,29 @@
-<%= @cartoon.description.html_safe%>
+<div class="row">
+  <div class="jumbotron">
+    <div class="container">
+      <h1><%= @cartoon.title.capitalize %>!</h1>
+    </div>
+  </div>
+  <div class="page-header">
+    <h1><%= @cartoon.title %> <small> created by  <%=@cartoon.created_by %></small></h1>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">Information</div>
+    <div class="panel-body">
+      <p>Is active: <%= @cartoon.is_active %></p>
+      <p>Language: <%= @cartoon.language %></p>
+      <p>Genre: <%= @cartoon.genre %></p>
+      <p>Created by: <%= @cartoon.created_by %></p>
+    </div>
+  </div>
+
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= @cartoon.title %></h3>
+    </div>
+    <div class="panel-body">
+      <%= @cartoon.description.html_safe %>
+    </div>
+  </div>
+</div>

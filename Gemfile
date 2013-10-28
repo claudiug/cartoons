@@ -29,6 +29,7 @@ gem 'thin'
 gem "jquery-ui-rails"
 gem 'chosen-rails'
 gem 'compass-rails', github: 'Compass/compass-rails'
+gem 'ransack'
 
 
 # Use jquery as the JavaScript library

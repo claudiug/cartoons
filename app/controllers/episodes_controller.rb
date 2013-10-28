@@ -2,7 +2,7 @@ class EpisodesController < ApplicationController
   before_action :set_cartoon
 
   def index
-    @episodes = @cartoon.episodes
+    @episodes = Episode.all
   end
 
   def show

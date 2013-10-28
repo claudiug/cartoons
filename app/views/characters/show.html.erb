@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="jumbotron">
+    <div class="container">
+      <h1><%= @character.name.capitalize %>!</h1>
+    </div>
+  </div>
+  <div class="page-header">
+    <h1><%= @character.name %> <small> created by  <%=@character.first_appearance %></small></h1>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">Information</div>
+    <div class="panel-body">
+      <p>Language: <%= @character.name %></p>
+      <p>Genre: <%= @character.role %></p>
+      <p>Created by: <%= @character.occupation %></p>
+    </div>
+  </div>
+
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= @character.name %></h3>
+    </div>
+    <div class="panel-body">
+      <%= @character.description.html_safe %>
+    </div>
+  </div>
+</div>
