@@ -1,6 +1,7 @@
 class Cartoon < ActiveRecord::Base
   has_many :episodes
   has_many :characters
+  has_many :comments, as: :commentable
   validates :slug, uniqueness: true, presence: true
   before_validation :generate_slug
   before_validation :make_title_titlecase

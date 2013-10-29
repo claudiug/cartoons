@@ -1,5 +1,7 @@
 class Song < ActiveRecord::Base
   belongs_to :episode
+  has_many :comments, as: :commentable
+
   validates :slug, uniqueness: true, presence: true
   before_validation :generate_slug
   before_validation :make_title_titlecase

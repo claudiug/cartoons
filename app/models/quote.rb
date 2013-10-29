@@ -1,5 +1,6 @@
 class Quote < ActiveRecord::Base
   belongs_to :character
+  has_many :comments, as: :commentable
 
   validates :slug, uniqueness: true, presence: true
   before_validation :generate_slug
