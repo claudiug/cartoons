@@ -1,17 +1,14 @@
 <%= search_form_for @search do |f| %>
-    <div>
-      <%= f.label :title_cont, "Title Contains" %>
-      <%= f.text_field :title_cont %>
-    </div>
-    <div>
-      <%= f.label :no_of_episodes_gteq, "Episodes between" %>
-      <%= f.text_field :no_of_episodes_gteq %>
-      <%= f.label :no_of_episodes_lteq, "and" %>
-      <%= f.text_field :no_of_episodes_lteq %>
-    </div>
-    <div>
-      <%= f.submit %>
-    </div>
+
+    <%= f.condition_fields do |c| %>
+        <div>
+          <%= c.attribute_fields do |a| %>
+          <%= a.attribute_select %>
+          <% end %>
+        </div>
+        <% end %>
+
+     <p> <%= f.submit %></p>
 
 <% end %>
 
