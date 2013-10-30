@@ -1,7 +1,11 @@
-<%= content_tag :div, id: "comments"do %>
-    <% @comments.each do |comment| %>
-        <div class="comment">
-          <%= simple_format comment.content %>
-        </div>
+<div class="row">
+  <div class="panel-default">
+    <%= content_tag :div, id: "comments" do %>
+        <% @comments.each do |comment| %>
+            <div class="comment">
+              <%= simple_format comment.content %>
+            </div>
+        <% end %>
     <% end %>
-<% end %>
+  </div>
+</div>
