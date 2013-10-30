@@ -12,8 +12,10 @@ class CommentsController < ApplicationController
   end
 
   def create
+    #send an email to me with some details!
     @comment = @commentable.comments.new(params.require(:comment).permit(:name, :email, :content,:commentable_id, :commentable_type ))
     if @comment.save
+      CommentsMailer.comments_receive(@comment).deliver
       redirect_to @commentable, notice: "Comment created."
     else
       render :new
