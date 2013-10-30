@@ -1,8 +1,7 @@
-<div class="panel panel-success">
-  <h1>All comments</h1>
+<div id="comments">
   <% @comments.each do |comment| %>
-      <%= simple_format comment.content %>
-  <%end%>
-
-
+      <div class="comment">
+        <%= simple_format comment.content %>
+      </div>
+  <% end %>
 </div>

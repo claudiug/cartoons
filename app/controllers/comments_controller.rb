@@ -8,12 +8,19 @@ class CommentsController < ApplicationController
   end
 
   def new
-
+    @comment = @commentable.comments.new
   end
 
-  def show
-    @comment = @commentable.new
+  def create
+    @comment = @commentable.comments.new(params.require(:comment).permit(:name, :email, :content,:commentable_id, :commentable_type ))
+    if @comment.save
+      redirect_to @commentable, notice: "Comment created."
+    else
+      render :new
+    end
   end
+
+
 
   private
   #def load_comments
@@ -26,7 +33,6 @@ class CommentsController < ApplicationController
     @commentable = klass.find_by(slug: params["#{klass.name.underscore}_id"])
   end
 
-  helper_method :load_comments
 
 
 end

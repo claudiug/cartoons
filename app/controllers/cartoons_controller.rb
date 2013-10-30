@@ -7,6 +7,9 @@ class CartoonsController < ApplicationController
 
   def show
     @cartoon = Cartoon.find_by!(slug: params[:id])
+    @commentable = @cartoon
+    @comments = @commentable.comments
+    @comment =  Comment.new
   end
 
   def set_cartoon
