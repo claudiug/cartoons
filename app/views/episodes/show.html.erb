@@ -1,4 +1,9 @@
-<p>Episode</p>
-<%= @episode.review.html_safe %>
-<%= render "comments/comments" %>
-<%= render "comments/form" %>
+<div class="row">
+  <p>Episode</p>
+  <%= @episode.review.html_safe %>
+  <%= render "comments/comments" %>
+<div class="row">
+  <%= render "comments/form" %>
+
+</div>
+</div>
