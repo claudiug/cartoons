@@ -9,7 +9,12 @@
 <body>
 <div class="container">
   <%= render "layouts/shared/header" %>
-
+  <% Announcement.active_announcement(cookies.signed[:hidden_announcement_ids]).each do |aa| %>
+      <%= div_for aa do  %>
+      <%= aa.message %>
+      <%= link_to "hide me", hide_announcements_path(aa) %>
+      <% end %>
+      <% end %>
   <%= yield %>
   <%= render "layouts/shared/footer" %>
 </div>

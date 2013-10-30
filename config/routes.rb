@@ -5,6 +5,7 @@ Cartoons::Application.routes.draw do
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
   get "logout", to: "sessions#destroy"
+  match 'announcements/:id/hide', to: 'announcements#hide', as: 'hide_announcements', via: "get"
 
   # site/cartoons
   # site/cartoon/FUTURAMA

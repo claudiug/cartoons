@@ -26,5 +26,7 @@ class CommentsController < ApplicationController
     @commentable = klass.find_by(slug: params["#{klass.name.underscore}_id"])
   end
 
+  helper_method :load_comments
+
 
 end
