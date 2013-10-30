@@ -1,4 +1,3 @@
-
 Cartoons::Application.routes.draw do
 
   root "default#index"
@@ -48,24 +47,6 @@ Cartoons::Application.routes.draw do
     end
     resources :episodes, only: [:index, :show]
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   namespace :admin do
     get "dashboard", to: "dashboard#index"
