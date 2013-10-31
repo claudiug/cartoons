@@ -9,8 +9,6 @@ class CartoonsController < ApplicationController
     @cartoon = Cartoon.find_by!(slug: params[:id])
   end
 
-  def set_cartoon
-    @cartoon = Cartoon.find_by!(slug: params[:cartoon_id])
-  end
+
 
 end
