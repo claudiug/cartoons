@@ -7,9 +7,6 @@ class EpisodesController < ApplicationController
 
   def show
     @episode = Episode.find_by!(slug: params[:id])
-    @commentable = @episode
-    @comments = @commentable.comments
-    @comment =  Comment.new
   end
 
   private
