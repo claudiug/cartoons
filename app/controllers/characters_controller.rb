@@ -1,4 +1,5 @@
 class CharactersController < ApplicationController
+  layout "characters"
   before_action :set_cartoon
 
   def index
