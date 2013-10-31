@@ -6,46 +6,14 @@ Cartoons::Application.routes.draw do
   get "logout", to: "sessions#destroy"
   match 'announcements/:id/hide', to: 'announcements#hide', as: 'hide_announcements', via: "get"
 
-  #/cartoons/index
-  #/cartoons/futurama/comments
   resources :cartoons, only: [:index, :show] do
-    resources :comments, only: [:index, :new, :create]
+    resources :characters, only: [:index, :show]
+    resources :episodes, only: [:index, :show]
   end
 
-  #/character/peter/comments
-  resources :characters, only: [:index, :show] do
-    resources :comments, only: [:index, :new, :create]
-  end
-
-  #/episodes/pilot/comments
-  resources :episodes, only: [:index, :show] do
-    resources :comments, only: [:index, :new, :create]
-  end
-
-  #/quotes/comments
-  resources :quotes, only: [:index, :show] do
-    resources :comments, only: [:index, :new, :create]
-  end
-
-  #/songs/comments
-  resources :songs, only: [:index, :show] do
-    resources :comments, only: [:index, :new, :create]
-  end
-
-  #songs/comments
   resources :characters, only: [:index, :show] do
     resources :quotes, only: [:index, :show]
-  end
-
-  #/cartoons/futurama/bender/quotes/best-one
-  #/cartoons/futurama/bender/songs/la-la-la-aaaa
-  #/cartoons/futurama/episodes/best-episodes
-  resources :cartoons, only: [:index, :show] do
-    resources :characters, only: [:index, :show] do
-      resources :quotes, only: [:index, :show]
-      resources :songs, only: [:index, :show]
-    end
-    resources :episodes, only: [:index, :show]
+    resources :songs, only: [:index, :show]
   end
 
   namespace :admin do
