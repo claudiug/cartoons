@@ -15,7 +15,21 @@
       <%= link_to "hide me", hide_announcements_path(aa) %>
       <% end %>
       <% end %>
-  <%= yield %>
+  <div class="row">
+      <div class="col-lg-10">
+        <%= yield %>
+      </div>
+      <div class="col-lg-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#">first</a> </li>
+          <li><a href="#">second</a> </li>
+          <li><a href="#">one more</a> </li>
+          <li><a href="#">this is so cool</a> </li>
+          <li><a href="#">omg</a> </li>
+
+        </ul>
+      </div>
+   </div>
   <%= render "layouts/shared/footer" %>
 </div>
 

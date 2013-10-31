@@ -7,14 +7,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Cartoons</a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "All Cartoons", cartoons_path %></li>
+          <li><%= link_to "All Episodes", episodes_path %></li>
+          <li><%= link_to "All Quotes", quotes_path %></li>
+          <li><%= link_to "All Songs", songs_path %></li>
         </ul>
       </div><!-- /.nav-collapse -->
     </div><!-- /.container -->

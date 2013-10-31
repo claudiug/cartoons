@@ -1,7 +1,9 @@
 class CharactersController < ApplicationController
+  before_action :set_cartoon
 
   def index
-    @characters = Character.all
+    @characters = @cartoon.characters
+
   end
 
   def show
@@ -12,6 +14,8 @@ class CharactersController < ApplicationController
   end
 
   private
-
+  def set_cartoon
+    @cartoon = Cartoon.find_by(slug: params[:cartoon_id])
+  end
 
 end

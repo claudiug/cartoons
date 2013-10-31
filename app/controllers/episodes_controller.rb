@@ -1,7 +1,8 @@
 class EpisodesController < ApplicationController
+  before_action :set_cartoon
 
   def index
-    @episodes = Episode.all
+    @episodes = @cartoon.episodes
   end
 
   def show
@@ -11,5 +12,8 @@ class EpisodesController < ApplicationController
     @comment =  Comment.new
   end
 
-
+  private
+  def set_cartoon
+    @cartoon = Cartoon.find_by(slug: params[:cartoon_id])
+  end
 end

@@ -1,20 +1,21 @@
-<%= search_form_for @search do |f| %>
+<div class="page-header">
+  <h1>Example page header <small>Subtext for header</small></h1>
+</div>
 
-    <%= f.condition_fields do |c| %>
-        <div>
-          <%= c.attribute_fields do |a| %>
-          <%= a.attribute_select %>
-          <% end %>
-        </div>
-        <% end %>
+<div class=" row">
+  <% @cartoons.each do |c| %>
 
-     <p> <%= f.submit %></p>
+      <div class="col-lg-4">
+        <hr/>
+        <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+        <h2><%= c.title %></h2>
+        <p><%= c.created_by %></p>
+        <p><%= c.no_of_seasons %></p>
+        <p><%= c.no_of_episodes %></p>
+        <p>Lorem test here</p>
+        <p><%= link_to "View Details ", cartoon_path(c), class: "btn btn-info" %></p>
 
-<% end %>
+      </div><!-- /.col-lg-4 -->
 
-
-<% @cartoons.each do |c| %>
-    <%= link_to c.title, cartoon_path(c) %>
-<% end %>
-
-
+  <% end %>
+</div>
