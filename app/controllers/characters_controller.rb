@@ -1,9 +1,8 @@
 class CharactersController < ApplicationController
-  layout "characters"
   before_action :set_cartoon
 
   def index
-    @characters = @cartoon.characters
+    @characters = @cartoon.characters.page(params[:page]).per_page(5)
 
   end
 
