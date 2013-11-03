@@ -9,6 +9,8 @@ class Admin::EpisodesController < ApplicationController
     @episodes = Episode.order(sort_column + ' ' + sort_direction).
         paginate(page: params[:page], per_page: 5)
 
+
+
   end
 
   def new

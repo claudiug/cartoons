@@ -6,4 +6,6 @@ class AnnouncementsController < ApplicationController
     redirect_to :back #redirect to the current page after the message is hide
   end
 
+
+
 end

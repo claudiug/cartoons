@@ -22,6 +22,12 @@ gem 'ransack'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem  'rspec-rails'
+gem 'factory_girl_rails'
+gem 'faker'
+gem 'capybara'
+gem 'launchy'
+gem 'selenium-webdriver'
 
 
 
