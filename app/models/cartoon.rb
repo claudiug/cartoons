@@ -20,11 +20,11 @@ class Cartoon < ActiveRecord::Base
   end
 
   def generate_slug
-    self.slug ||= title.parameterize
+    self.slug = title.try(:parameterize)
   end
 
   def make_title_titlecase
-    self.title = title.titlecase
+    self.title = title.try(:titlecase)
   end
 
   def no_of_episodes
