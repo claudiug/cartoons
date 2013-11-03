@@ -8,7 +8,7 @@ class Cartoon < ActiveRecord::Base
   validates :created_by, presence: true
   validates :language, presence: true
   validates :country_of_origin, presence: true
-  validates :no_of_episodes, presence: true, numericality: true
+  validates :no_of_episodes,  presence: true
   validates :no_of_seasons , presence: true, numericality: true
   validates :is_active, presence: true
   validates :slug, presence: true, uniqueness: true
@@ -29,6 +29,14 @@ class Cartoon < ActiveRecord::Base
 
   def no_of_episodes
     episodes.count
+  end
+
+  def self.by_title(q)
+    if q.present?
+      where("title like ?", "#{q}").order("created_at DESC")
+    else
+      Cartoon.none
+    end
   end
 
 
