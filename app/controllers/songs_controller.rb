@@ -5,7 +5,7 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find_by(slug: params[:id])
+    @song = Song.find_by!(slug: params[:id])
     #@commentable = @song
     #@comments = @commentable.comments
     #@comment =  Comment.new

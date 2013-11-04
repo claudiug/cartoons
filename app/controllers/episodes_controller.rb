@@ -11,6 +11,6 @@ class EpisodesController < ApplicationController
 
   private
   def set_cartoon
-    @cartoon = Cartoon.find_by(slug: params[:cartoon_id])
+    @cartoon = Cartoon.find_by!(slug: params[:cartoon_id])
   end
 end

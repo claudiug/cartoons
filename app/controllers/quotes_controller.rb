@@ -5,6 +5,6 @@ class QuotesController < ApplicationController
   end
 
   def show
-    @quote = Quote.find_by(slug: params[:id])
+    @quote = Quote.find_by!(slug: params[:id])
   end
 end

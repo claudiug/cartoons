@@ -27,6 +27,7 @@ gem 'factory_girl_rails'
 gem 'faker'
 gem 'capybara'
 gem 'launchy'
+
 gem 'selenium-webdriver'
 
 
