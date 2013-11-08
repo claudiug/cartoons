@@ -60,6 +60,31 @@ class Cartoon < ActiveRecord::Base
     end
   end
 
+  def get_no_of_comments
+    comments.count
+  end
+
+  def get_comments
+    comments.order("created_at DESC")
+  end
+
+  def to_s
+    "#{id}-#{title}"
+  end
+
+  def self.get_all_slug
+    pluck(:slug)
+  end
+
+  def self.get_average_of_episode
+    average(:no_of_episodes)
+  end
+
+  def self.data_stuff
+    select("date(created_at), sum(no_of_episodes)").group("date(created_at)")
+  end
+
+
 
 
 end
