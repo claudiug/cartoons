@@ -35,7 +35,28 @@ class Cartoon < ActiveRecord::Base
     if q.present?
       where("title like ?", "#{q}").order("created_at DESC")
     else
-      Cartoon.none
+      none
+    end
+  end
+
+  def count_characters
+    if characters.nil?
+      none
+    else
+     characters.count
+    end
+  end
+
+
+  def cartoon_characters
+    joins(:characters)
+  end
+
+  def self.find_characters(name)
+    if name
+      joins(:character).where(characters: {name: name})
+    else
+      none
     end
   end
 
