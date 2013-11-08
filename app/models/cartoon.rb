@@ -84,7 +84,22 @@ class Cartoon < ActiveRecord::Base
     select("date(created_at), sum(no_of_episodes)").group("date(created_at)")
   end
 
+  def self.more_data
+    joins(:characters, :episodes)
+  end
 
+
+  def self.get_some_more_data
+    joins(characters: :quotes)
+  end
+
+  def self.get_some_more_stupid_data
+    joins(characters:[{quotes: :comments}, :episodes])
+  end
+
+  def self.active_comments
+    includes(:comments).where(comments: {is_active:true})
+  end
 
 
 end
