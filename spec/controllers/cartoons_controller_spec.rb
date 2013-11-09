@@ -4,13 +4,27 @@ describe CartoonsController do
 
   describe "GET index" do
     context "with params q" do
-      it 'populate an array with that given letter'
-      it 'renders the index views'
+      it 'populate an array with that given letter' do
+        get :index, q: 's'
+        expect(response).to render_template :index
+      end
+      it 'renders the index views' do
+        get :index, q: 's'
+        expect(response).to render_template :index
+      end
     end
 
     context 'without params q' do
-      it 'populate an array with cartoons'
-      it 'render the index views'
+      it 'populate an array with cartoons'do
+        futurama = create(:cartoon, title: 'Futurama')
+        american = create(:cartoon, title: 'American')
+        get :index
+        expect(assigns(:cartoons)).to match_array([futurama, american])
+      end
+      it 'render the index views' do
+        get :index
+        expect(response).to render_template :index
+      end
     end
 
   end
