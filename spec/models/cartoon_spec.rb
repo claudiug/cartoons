@@ -42,8 +42,6 @@ describe 'Cartoon' do
   it 'is invalid with non numericality values for no of seasons'
   it 'is invalid with non numericality values for no of episodes'
   it 'has the name titlecase' do
-
-
-    expect(build(:cartoon, title:'Futurama')).to eq 'Futurama'
+    expect(build(:cartoon)).to eq 'Futurama'
   end
 end
