@@ -3,7 +3,7 @@ require 'faker'
 FactoryGirl.define do
   factory :cartoon do
     title {Faker::Name.first_name}
-    genre {}
+    genre "fake"
     #noinspection RubyArgCount
     description {Faker::Company.bs}
     created_by {Faker::Name.last_name}
@@ -11,6 +11,6 @@ FactoryGirl.define do
     country_of_origin {Faker::Address.state_abbr}
     no_of_seasons 4
     no_of_episodes 233
-    is_active false
+    is_active :true
   end
 end
