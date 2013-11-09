@@ -1,3 +1,5 @@
+require 'faker'
+
 FactoryGirl.define do
   factory :song do
     title "this is a song"

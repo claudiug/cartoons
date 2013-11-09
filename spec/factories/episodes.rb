@@ -1,3 +1,5 @@
+require 'faker'
+
 FactoryGirl.define do
   factory :episode do
     name "pilot"
