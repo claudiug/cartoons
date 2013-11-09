@@ -8,4 +8,11 @@ class Account < ActiveRecord::Base
                 with:  EMAIL,
                 message: "not a good email"
             }
+
+  def name
+    [username, email].join(" ")
+  end
+
+
+
 end

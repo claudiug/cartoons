@@ -15,6 +15,9 @@ class Cartoon < ActiveRecord::Base
   before_validation :generate_slug
   before_validation :make_title_titlecase
 
+  scope :published, -> {where(is_active: true)}
+  scope :unpublished, -> {where(is_active: false)}
+
   def to_param
     slug
   end
