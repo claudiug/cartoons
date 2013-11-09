@@ -2,12 +2,13 @@ require 'faker'
 
 FactoryGirl.define do
   factory :cartoon do
-    title "Futurama"
-    genre "cool"
-    description "some here"
-    created_by "me"
-    language "en"
-    country_of_origin "moon"
+    title {Faker::Name.first_name}
+    genre {}
+    #noinspection RubyArgCount
+    description {Faker::Company.bs}
+    created_by {Faker::Name.last_name}
+    language {Faker::Name.prefix}
+    country_of_origin {Faker::Address.state_abbr}
     no_of_seasons 4
     no_of_episodes 233
     is_active false
