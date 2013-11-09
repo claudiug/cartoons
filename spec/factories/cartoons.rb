@@ -11,6 +11,6 @@ FactoryGirl.define do
     country_of_origin {Faker::Address.state_abbr}
     no_of_seasons 4
     no_of_episodes 233
-    is_active :true
+    is_active true
   end
 end

@@ -16,6 +16,16 @@ describe CartoonsController do
   end
 
   describe 'GET show' do
+    it 'get the requested cartoon to @cartoon' do
+      cartoon = create(:cartoon)
+      get :show, id:cartoon
+      expect(assigns(:cartoon)).to eq(cartoon)
+    end
 
+    it 'render the show view' do
+      cartoon = create(:cartoon)
+      get :show, id:cartoon
+      expect(response).to render_template :show
+    end
   end
 end
