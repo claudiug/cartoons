@@ -28,6 +28,16 @@ class Character < ActiveRecord::Base
     self.cartoon = Cartoon.find_by(title: title) if title.present?
   end
 
+  def self.get_all_quotes
+    joins(:quotes).where.not(content: nil)
+  end
+
+  def get_quote_for_character(character)
+    if character
+      where(name: character).joins(quotes)
+    end
+  end
+
 
 
 end
